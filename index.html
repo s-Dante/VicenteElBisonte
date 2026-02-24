@@ -67,11 +67,34 @@
             margin: 10px 0px;
         }
 
+        .scroll-content {
+            display: flex;
+            gap: 40px;
+            /* Espacio fijo entre logos */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-content.left,
+        .scroll-content.right {
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .scroll-content.top,
+        .scroll-content.bottom {
+            flex-direction: row;
+            height: 100%;
+            padding: 0 20px;
+        }
+
         .scroll-content.left {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            animation: scroll-vertical 20s linear infinite;
+            animation: scroll-vertical 10s linear infinite;
+
         }
 
         .scroll-content.right {
@@ -82,6 +105,41 @@
         }
 
         /* Rotación correcta para laterales */
+        .perimeter-board.left,
+        .perimeter-board.right {
+            width: 6vw;
+            height: 100%;
+            margin: 0;
+        }
+
+        .perimeter-board.top,
+        .perimeter-board.bottom {
+            width: 100%;
+            height: 22vw;
+            margin: 0;
+        }
+
+        .scroll-content.top {
+            display: flex;
+            height: 100%;
+            animation: scroll 10s linear infinite;
+        }
+
+        .scroll-content.bottom {
+            display: flex;
+            height: 100%;
+            animation: scroll 10s linear infinite reverse;
+            animation-direction: reverse;
+        }
+
+        .sponsor-logo-vertical {
+            width: 110%;
+            max-width: 200px;
+            height: auto;
+            object-fit: contain;
+            margin-top: 101px;
+        }
+
         .perimeter-board.left .sponsor-logo-vertical {
             transform: rotate(-90deg);
         }
@@ -90,29 +148,11 @@
             transform: rotate(90deg);
         }
 
-        .scroll-content.top {
-            display: flex;
-            height: 100%;
-            animation: scroll 15s linear infinite;
-        }
-
-        .scroll-content.bottom {
-            display: flex;
-            height: 100%;
-            animation: scroll 15s linear infinite;
-            animation-direction: reverse;
-        }
-
-        .sponsor-logo-vertical {
-            width: 70%;
-            height: auto;
-            margin: 25px auto;
-            transform-origin: center;
-        }
-
         .sponsor-logo-horizontal {
-            height: 80%;
-            margin: auto 10px;
+            height: 100%;
+            width: auto;
+            max-height: 50px;
+            object-fit: contain;
         }
 
         @keyframes scroll-vertical {
